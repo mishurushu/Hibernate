@@ -8,7 +8,7 @@ public class HibernateRunner {
 
         Transaction transaction = session.beginTransaction();
 
-        Elev elev = session.find(Elev.class , 2);
+      /*  Elev elev = session.find(Elev.class , 2);
         Elev altElev = session.find(Elev.class, 5);
 
 
@@ -69,7 +69,19 @@ public class HibernateRunner {
         System.out.println(altProfesor);
 
         ProfesoriMaterie profesoriMaterie = session.find(ProfesoriMaterie.class, 4);
-        System.out.println(profesoriMaterie);
+        System.out.println(profesoriMaterie);*/
+
+        Elev elevDeCautat = session.find(Elev.class, 5);
+
+        System.out.println(elevDeCautat);
+
+        Nota notaDeCautat = session.find(Nota.class, 3);
+
+        System.out.println(notaDeCautat);
+
+
+
+
 
         transaction.commit();
 

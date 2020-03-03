@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "elevi")
@@ -13,23 +14,21 @@ public class Elev {
     @Column(name = "numeElev")
     public String numeElev;
 
-    @Column(name = "idClasa")
-    public int idClasa;
+    @ManyToOne
+    @JoinColumn(name = "idClasa")
+    public Clasa clasaDeCareApartine;
 
-    @Override
+    @OneToMany(mappedBy = "valoareNota")
+    List<Nota> notaPrimita;
+
+
+  /*  @Override
     public String toString() {
         return "Elev{" +
                 "idElev=" + idElev +
                 ", numeElev='" + numeElev + '\'' +
-                ", idClasa=" + idClasa +
+                ", clasaDeCareApartine=" + clasaDeCareApartine.numeClasa +
+                ", notaPrimita=" + notaPrimita +
                 '}';
-    }
-
-    public void setNumeElev(String numeElev) {
-        this.numeElev = numeElev;
-    }
-
-    public void setIdClasa(int idClasa) {
-        this.idClasa = idClasa;
-    }
+    }*/
 }

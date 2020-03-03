@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "clasa")
@@ -11,6 +12,9 @@ public class Clasa {
 
     @Column(name = "numeClasa", length = 10)
     public String numeClasa;
+
+    @OneToMany(mappedBy = "clasaDeCareApartine")
+    public List<Elev> listaElevi;
 
     @Override
     public String toString() {

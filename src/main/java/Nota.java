@@ -12,31 +12,22 @@ public class Nota {
     @Column(name = "valoareNota")
     public int valoareNota;
 
-    @Column(name = "idElev")
-    public int idElev;
 
-    @Column(name = "idPredare")
-    public int idPredare;
+    @ManyToOne
+    @JoinColumn(name = "idElev")
+    public Elev elevulCuNota;
 
-    @Override
+    @ManyToOne
+    @JoinColumn(name = "idPredare")
+    public ProfesoriMaterie profesoriMaterie;
+
+   /* @Override
     public String toString() {
         return "Nota{" +
                 "idNota=" + idNota +
                 ", valoareNota=" + valoareNota +
-                ", idElev=" + idElev +
-                ", idPredare=" + idPredare +
+                ", elevulCuNota=" + elevulCuNota.numeElev +
+                ", profesoriMaterie=" + profesoriMaterie.idPredare +
                 '}';
-    }
-
-    public void setValoareNota(int valoareNota) {
-        this.valoareNota = valoareNota;
-    }
-
-    public void setIdElev(int idElev) {
-        this.idElev = idElev;
-    }
-
-    public void setIdPredare(int idPredare) {
-        this.idPredare = idPredare;
-    }
+    }*/
 }

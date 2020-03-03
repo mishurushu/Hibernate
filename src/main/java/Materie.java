@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "materii")
@@ -13,17 +14,15 @@ public class Materie {
     @Column(name = "numeMaterie")
     public String numeMaterie;
 
-    public void setNumeMaterie(String numeMaterie) {
-        this.numeMaterie = numeMaterie;
-    }
+    @OneToMany(mappedBy = "idMaterie")
+    List<Materie> materii;
 
     @Override
     public String toString() {
         return "Materie{" +
-                "idMaterie='" + idMaterie + '\'' +
+                "idMaterie=" + idMaterie +
                 ", numeMaterie='" + numeMaterie + '\'' +
+                ", materii=" + materii +
                 '}';
     }
-
-
 }

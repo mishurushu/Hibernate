@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "profesorimaterie")
@@ -10,26 +11,27 @@ public class ProfesoriMaterie {
     @Column(name = "idPredare")
     public int idPredare;
 
-    @Column(name = "idProfesor")
-    public int idProfesor;
+    @ManyToOne
+    @JoinColumn(name = "idProfesor")
+    public Profesor profesorDeLaClasa;
+}
+/*
+    @ManyToOne
+    @JoinColumn(name = "idMaterie")
+    public Materie materie;
+}*/
 
-    @Column(name = "idMaterie")
-    public int idMaterie;
+  /*  @OneToMany(mappedBy = "")
+    List<Nota> notePrimite;*/
 
-    public void setIdProfesor(int idProfesor) {
-        this.idProfesor = idProfesor;
-    }
 
-    public void setIdMaterie(int idMaterie) {
-        this.idMaterie = idMaterie;
-    }
-
-    @Override
+   /* @Override
     public String toString() {
         return "ProfesoriMaterie{" +
                 "idPredare=" + idPredare +
-                ", idProfesor=" + idProfesor +
-                ", idMaterie=" + idMaterie +
+                ", profesorDeLaClasa=" + profesorDeLaClasa.numeProfesor +
+                ", materie=" + materie.numeMaterie +
+                ", notePrimite=" + notePrimite +
                 '}';
     }
-}
+}*/
