@@ -22,5 +22,11 @@ public class Nota {
     @JoinColumn(name = "idPredare")
     public ProfesoriMaterie profesoriMaterieExacta;
 
-
+    @Override
+    public String toString() {
+        return "Nota{" +
+                "valoareNota=" + valoareNota +
+                ", profesoriMaterieExacta=" + profesoriMaterieExacta.profesorExact +
+                '}';
+    }
 }

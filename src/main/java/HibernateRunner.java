@@ -79,18 +79,12 @@ public class HibernateRunner {
 
         System.out.println(notaDeCautat);
 */
-        ProfesoriMaterie profesoriMaterieCautat = session.find(ProfesoriMaterie.class, 2);
-
-        System.out.println(profesoriMaterieCautat);
-
-
-
-
-
-        transaction.commit();
+        Elev elevCautat = session.find(Elev.class, 10);
+        System.out.println(elevCautat);
+        Nota notaDeCautat = session.find(Nota.class, 5);
+        System.out.println(notaDeCautat);
 
 
         HibernateUtil.shutdown();
-
     }
 }

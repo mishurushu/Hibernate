@@ -21,4 +21,11 @@ public class Elev {
     @OneToMany(mappedBy = "elevulCuNota")
     List<Nota> notaPrimita;
 
+    @Override
+    public String toString() {
+        return "Elev{" +
+                "idElev=" + idElev +
+                ", numeElev='" + numeElev + '\'' +
+                '}';
+    }
 }

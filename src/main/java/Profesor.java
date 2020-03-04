@@ -17,4 +17,11 @@ public class Profesor {
     @OneToMany(mappedBy = "profesorExact")
     List<ProfesoriMaterie> profesoriMaterieList;
 
+    @Override
+    public String toString() {
+        return "Profesor{" +
+                "idProfesor=" + idProfesor +
+                ", numeProfesor='" + numeProfesor + '\'' +
+                '}';
+    }
 }
