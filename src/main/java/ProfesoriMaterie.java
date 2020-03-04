@@ -11,27 +11,16 @@ public class ProfesoriMaterie {
     @Column(name = "idPredare")
     public int idPredare;
 
+    @OneToMany(mappedBy = "profesoriMaterieExacta")
+    List<Nota> note;
+
     @ManyToOne
     @JoinColumn(name = "idProfesor")
-    public Profesor profesorDeLaClasa;
-}
-/*
+    public Profesor profesorExact;
+
     @ManyToOne
     @JoinColumn(name = "idMaterie")
-    public Materie materie;
-}*/
-
-  /*  @OneToMany(mappedBy = "")
-    List<Nota> notePrimite;*/
+    public Materie materieExacta;
 
 
-   /* @Override
-    public String toString() {
-        return "ProfesoriMaterie{" +
-                "idPredare=" + idPredare +
-                ", profesorDeLaClasa=" + profesorDeLaClasa.numeProfesor +
-                ", materie=" + materie.numeMaterie +
-                ", notePrimite=" + notePrimite +
-                '}';
-    }
-}*/
+}

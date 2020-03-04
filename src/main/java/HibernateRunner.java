@@ -71,13 +71,17 @@ public class HibernateRunner {
         ProfesoriMaterie profesoriMaterie = session.find(ProfesoriMaterie.class, 4);
         System.out.println(profesoriMaterie);*/
 
-        Elev elevDeCautat = session.find(Elev.class, 5);
+       /* Elev elevDeCautat = session.find(Elev.class, 5);
 
         System.out.println(elevDeCautat);
 
         Nota notaDeCautat = session.find(Nota.class, 3);
 
         System.out.println(notaDeCautat);
+*/
+        ProfesoriMaterie profesoriMaterieCautat = session.find(ProfesoriMaterie.class, 2);
+
+        System.out.println(profesoriMaterieCautat);
 
 
 

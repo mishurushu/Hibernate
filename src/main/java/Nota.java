@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "note")
@@ -19,15 +20,7 @@ public class Nota {
 
     @ManyToOne
     @JoinColumn(name = "idPredare")
-    public ProfesoriMaterie profesoriMaterie;
+    public ProfesoriMaterie profesoriMaterieExacta;
 
-   /* @Override
-    public String toString() {
-        return "Nota{" +
-                "idNota=" + idNota +
-                ", valoareNota=" + valoareNota +
-                ", elevulCuNota=" + elevulCuNota.numeElev +
-                ", profesoriMaterie=" + profesoriMaterie.idPredare +
-                '}';
-    }*/
+
 }

@@ -13,18 +13,8 @@ public class Profesor {
 
     @Column(name = "numeProfesor")
     public String numeProfesor;
-/*
 
-    @OneToMany(mappedBy = "profesorDeLaClasa")
-    List<Profesor> profesori;
-*/
+    @OneToMany(mappedBy = "profesorExact")
+    List<ProfesoriMaterie> profesoriMaterieList;
 
-  /*  @Override
-    public String toString() {
-        return "Profesor{" +
-                "idProfesor=" + idProfesor +
-                ", numeProfesor='" + numeProfesor + '\'' +
-                ", profesori=" + profesori +
-                '}';
-    }*/
 }

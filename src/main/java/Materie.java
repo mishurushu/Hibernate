@@ -14,15 +14,7 @@ public class Materie {
     @Column(name = "numeMaterie")
     public String numeMaterie;
 
-    @OneToMany(mappedBy = "idMaterie")
-    List<Materie> materii;
+    @OneToMany(mappedBy = "materieExacta")
+    List<ProfesoriMaterie> profesoriMaterieList;
 
-    @Override
-    public String toString() {
-        return "Materie{" +
-                "idMaterie=" + idMaterie +
-                ", numeMaterie='" + numeMaterie + '\'' +
-                ", materii=" + materii +
-                '}';
-    }
 }

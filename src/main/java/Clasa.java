@@ -16,15 +16,4 @@ public class Clasa {
     @OneToMany(mappedBy = "clasaDeCareApartine")
     public List<Elev> listaElevi;
 
-    @Override
-    public String toString() {
-        return "Clasa{" +
-                "idClasa=" + idClasa +
-                ", numeClasa='" + numeClasa + '\'' +
-                '}';
-    }
-
-    public void setNumeClasa(String numeClasa) {
-        this.numeClasa = numeClasa;
-    }
 }

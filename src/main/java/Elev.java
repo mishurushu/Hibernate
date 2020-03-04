@@ -18,17 +18,7 @@ public class Elev {
     @JoinColumn(name = "idClasa")
     public Clasa clasaDeCareApartine;
 
-    @OneToMany(mappedBy = "valoareNota")
+    @OneToMany(mappedBy = "elevulCuNota")
     List<Nota> notaPrimita;
 
-
-  /*  @Override
-    public String toString() {
-        return "Elev{" +
-                "idElev=" + idElev +
-                ", numeElev='" + numeElev + '\'' +
-                ", clasaDeCareApartine=" + clasaDeCareApartine.numeClasa +
-                ", notaPrimita=" + notaPrimita +
-                '}';
-    }*/
 }
