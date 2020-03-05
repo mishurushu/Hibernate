@@ -125,13 +125,42 @@ public class HibernateRunner {
         List lista3 = query.list();
         System.out.println(lista3);
 */
-        String intrebareaMea = "from Elev where idElev = 10";
+       /* String intrebareaMea = "from Elev where idElev = 10";
         Query query = session.createQuery(intrebareaMea);
         List listaMea = query.list();
         System.out.println(listaMea);
-
-        String intrebareMea2 = "select n.idNota from Nota n where n.elevulCuNota = 10 ";
+        String intrebareMea2 = "select n.idNota from Nota n where n.elevulCuNota.idElev = 10 ";
         query = session.createQuery(intrebareMea2);
+        List listaMea2 = query.list();
+        System.out.println(listaMea2);*/
+       String intrebare = "from Elev where numeElev like 'z%' ";
+       Query query = session.createQuery(intrebare);
+       List lista1 = query.list();
+        System.out.println(lista1);
+
+        String intrebare1 = "from Elev e where e.idElev < 10 " + " and clasaDeCareApartine.numeClasa = '10b' ";
+        query = session.createQuery(intrebare1);
+        List lista2 = query.list();
+        System.out.println(lista2);
+
+        String intrebare2 ="SELECT notaPrimita from Elev e where numeElev like '%e' ";
+        query = session.createQuery(intrebare2);
+        List lista3 = query.list();
+        System.out.println(lista3);
+
+        String intrebare3 = "select count (e) from Elev e where e.clasaDeCareApartine.numeClasa = '10A'" ;
+        query = session.createQuery(intrebare3);
+        Object lista4 =query.getSingleResult();
+        System.out.println(lista4);
+
+        String intrebare4 = "select c.numeClasa from Clasa c where c.listaElevi.size < 10" ;
+        query = session.createQuery(intrebare4);
+        List lista5 = query.list();
+        System.out.println(lista5);
+
+
+
+
 
 
 

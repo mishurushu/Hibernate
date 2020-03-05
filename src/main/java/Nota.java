@@ -25,8 +25,9 @@ public class Nota {
     @Override
     public String toString() {
         return "Nota{" +
-                "valoareNota=" + valoareNota +
-                ", profesoriMaterieExacta=" + profesoriMaterieExacta.profesorExact +
+                "idNota=" + idNota +
+                ", valoareNota=" + valoareNota +
+                ", elevulCuNota=" + elevulCuNota +
                 '}';
     }
 }
