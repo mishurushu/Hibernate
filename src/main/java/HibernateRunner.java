@@ -2,14 +2,13 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateRunner {
 
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
 
-        Transaction transaction = session.beginTransaction();
 
       /*  Elev elev = session.find(Elev.class , 2);
         Elev altElev = session.find(Elev.class, 5);
@@ -133,7 +132,7 @@ public class HibernateRunner {
         query = session.createQuery(intrebareMea2);
         List listaMea2 = query.list();
         System.out.println(listaMea2);*/
-       String intrebare = "from Elev where numeElev like 'z%' ";
+       /*String intrebare = "from Elev where numeElev like 'z%' ";
        Query query = session.createQuery(intrebare);
        List lista1 = query.list();
         System.out.println(lista1);
@@ -156,14 +155,27 @@ public class HibernateRunner {
         String intrebare4 = "select c.numeClasa from Clasa c where c.listaElevi.size < 10" ;
         query = session.createQuery(intrebare4);
         List lista5 = query.list();
-        System.out.println(lista5);
+        System.out.println(lista5);*/
+
+       ElevService elevService = ElevService.getElevService();
+        List<Elev> elevsByClass = elevService.getElevsByClass("10A");
+        List<Elev> elevsByClass1 = elevService.getElevsByClass("10B");
+        List<Elev> elevsByClass2 = elevService.getElevsByClass("10C");
+        System.out.println(elevsByClass);
+        System.out.println(elevsByClass2);
+        List<Elev> guta = elevService.searchByName("am");
+        System.out.println(guta);
+        ArrayList<Object> elevPremium = elevService.searchForPremium();
+        System.out.println(elevPremium);
 
 
+        ClasaService clasaService = ClasaService.getClasaService();
+        List<Elev> elevsFromClass = clasaService.showElevs("A");
+        System.out.println(elevsFromClass);
+        List<Clasa> clasa = clasaService.showClassByElevName("Tocu");
+        System.out.println(clasa);
 
 
-
-
-
-        HibernateUtil.shutdown();
+     HibernateUtil.shutdown();
     }
 }

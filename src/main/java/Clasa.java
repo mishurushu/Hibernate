@@ -16,4 +16,12 @@ public class Clasa {
     @OneToMany(mappedBy = "clasaDeCareApartine")
     public List<Elev> listaElevi;
 
+    @Override
+    public String toString() {
+        return "Clasa{" +
+                "idClasa=" + idClasa +
+                ", numeClasa='" + numeClasa + '\'' +
+                ", listaElevi=" + listaElevi +
+                '}';
+    }
 }
