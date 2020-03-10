@@ -1,7 +1,3 @@
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.query.Query;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -174,6 +170,14 @@ public class HibernateRunner {
         System.out.println(elevsFromClass);
         List<Clasa> clasa = clasaService.showClassByElevName("Tocu");
         System.out.println(clasa);
+
+        MaterieService materieService = MaterieService.getMaterie();
+     List<Materie> analfabetism = materieService.showMaterieByName("analfabetism");
+     System.out.println(analfabetism);
+
+        NotaService notaService = NotaService.getNotaService();
+     List<Nota> nota = notaService.findNotaByElevName("Romu");
+     System.out.println(nota);
 
 
      HibernateUtil.shutdown();
